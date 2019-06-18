@@ -1,5 +1,5 @@
-if (localStorage.getItem('aceitouTermos') === null) {
-    const nome = prompt("Qual o seu nome?")
+if (!localStorage.getItem('aceitouTermos')) {
+    const nome = prompt("Qual o seu nome?");
 
     const aceitouTermos = confirm(`
 
@@ -14,7 +14,6 @@ if (localStorage.getItem('aceitouTermos') === null) {
         • Você aceita que o código dessas 
             pessoas pode acessar tudo o que 
             você digitar aqui.
-
         `);
 
     if(!aceitouTermos){
