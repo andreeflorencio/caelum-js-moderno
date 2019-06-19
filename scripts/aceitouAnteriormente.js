@@ -1,6 +1,6 @@
-const aceitouAnteriormente = localStorage.getItem("aceitouSalvar");
-let aceitouSalvar;
-if(!aceitouAnteriormente){
+let aceitouSalvar = JSON.parse(localStorage.getItem("aceitouSalvar"));
+
+if(aceitouSalvar === null){
      aceitouSalvar = confirm('Você aceita que a gente salve suas informações?');
     
     if (!aceitouSalvar) {
