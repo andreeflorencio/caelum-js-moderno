@@ -1,6 +1,6 @@
-const aceitouSalvar = JSON.parse(aceitouAnteriormente);
+const aceitouSalvar = JSON.parse(localStorage.getItem('aceitouSalvar'));
 
-if(aceitouSalvar){
+if(aceitouSalvar === null || aceitouSalvar){
     let paginaInicial=localStorage.getItem('paginaInicial');
 
     if(!paginaInicial){
