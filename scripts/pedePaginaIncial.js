@@ -3,7 +3,7 @@
 
 import aceitouSalvar from './aceitouAnteriormente.js'
 
-if(aceitouSalvar === null || aceitouSalvar){
+if(aceitouSalvar === null || aceitouSalvar === true){
     let paginaInicial=localStorage.getItem('paginaInicial');
 
     if(!paginaInicial){
