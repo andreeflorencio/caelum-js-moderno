@@ -1,7 +1,4 @@
-//const aceitouSalvar = JSON.parse(localStorage.getItem('aceitouSalvar'));
-//const aceitouSalvar = aceitouSalvar;
-
-import aceitouSalvar from './aceitouAnteriormente.js'
+import aceitouSalvar from './aceitouSalvar.js'
 
 if(aceitouSalvar === null || aceitouSalvar === true){
     let paginaInicial=localStorage.getItem('paginaInicial');
