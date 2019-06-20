@@ -3,20 +3,22 @@ import paginaInicial from '/scripts/storage/paginaInicial.js';
 
 if(aceitouSalvar === null || aceitouSalvar === true){
     
-    if(!paginaInicial){
-        paginaInicial = prompt("Escolha a página inicial");  
+    let paginaInicialDefault=paginaInicial;
+
+    if(!paginaInicialDefault){
+        paginaInicialDefault = prompt("Escolha a página inicial");  
     } 
 
-    if(paginaInicial){
+    if(paginaInicialDefault){
         if (
-            paginaInicial.substring(0,7) !== 'http://' && 
-            paginaInicial.substring(0,8) !== 'https://'
+            paginaInicialDefault.substring(0,7) !== 'http://' && 
+            paginaInicialDefault.substring(0,8) !== 'https://'
         ) {
-            paginaInicial = `http://${paginaInicial}`;
+            paginaInicialDefault = `http://${paginaInicialDefault}`;
         }
 
-        $janelaPrincipal.src = paginaInicial;
-        $inputEndereco.value = paginaInicial;
-        localStorage.setItem('paginaInicial', paginaInicial);
+        $janelaPrincipal.src = paginaInicialDefault;
+        $inputEndereco.value = paginaInicialDefault;
+        localStorage.setItem('paginaInicial', paginaInicialDefault);
     }
 }
