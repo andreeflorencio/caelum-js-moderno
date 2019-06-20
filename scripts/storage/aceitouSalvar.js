@@ -1,1 +1,1 @@
-export default localStorage.getItem('aceitouSalvar');
+export default JSON.parse(localStorage.getItem('aceitouSalvar'));

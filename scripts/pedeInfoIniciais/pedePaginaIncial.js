@@ -2,7 +2,7 @@ import aceitouSalvar from '/scripts/storage/aceitouSalvar.js';
 import paginaInicial from '/scripts/storage/paginaInicial.js';
 
 if(aceitouSalvar === null || aceitouSalvar === true){
-
+    
     if(!paginaInicial){
         paginaInicial = prompt("Escolha a página inicial");  
     } 
