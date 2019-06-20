@@ -1,7 +1,7 @@
 import aceitouSalvar from '/scripts/storage/aceitouSalvar.js'
 
 if(aceitouSalvar === null){
-     aceitouSalvar = confirm('Você aceita que a gente salve suas informações?');
+    const aceitouSalvar = confirm('Você aceita que a gente salve suas informações?');
     
     if (!aceitouSalvar) {
         alert('Você pode mudar isso na página de configurações');
@@ -10,5 +10,3 @@ if(aceitouSalvar === null){
     localStorage.setItem('aceitouSalvar', aceitouSalvar);
     
 }
-
-export default aceitouSalvar
