@@ -1,7 +1,7 @@
-import aceitouSalvar from './pedeAceitouSalvar.js'
+import aceitouSalvar from '../storage/aceitouSalvar.js';
+import paginaInicial from '../storage/paginaInicial.js';
 
 if(aceitouSalvar === null || aceitouSalvar === true){
-    let paginaInicial=localStorage.getItem('paginaInicial');
 
     if(!paginaInicial){
         paginaInicial = prompt("Escolha a página inicial");  
