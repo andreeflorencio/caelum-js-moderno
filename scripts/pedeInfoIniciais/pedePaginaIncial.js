@@ -1,4 +1,4 @@
-import aceitouSalvar from './aceitouSalvar.js'
+import aceitouSalvar from './pedeAceitouSalvar.js'
 
 if(aceitouSalvar === null || aceitouSalvar === true){
     let paginaInicial=localStorage.getItem('paginaInicial');

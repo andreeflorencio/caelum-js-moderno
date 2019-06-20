@@ -1,3 +1,5 @@
-$inputPaginaInicial.value = localStorage.getItem("paginaInicial");
+import paginaInicial from './paginaInicial.js'
+import aceitouSalvar from './aceitouSalvar.js'
 
-$inputPermitiuSalvar.checked = JSON.parse(localStorage.getItem("aceitouSalvar"));
+$inputPaginaInicial.value = paginaInicial;
+$inputPermitiuSalvar.checked = aceitouSalvar;
