@@ -1,5 +1,5 @@
-import aceitouSalvar from '../storage/aceitouSalvar.js';
-import paginaInicial from '../storage/paginaInicial.js';
+import aceitouSalvar from '/scripts/storage/aceitouSalvar.js';
+import paginaInicial from '/scripts/storage/paginaInicial.js';
 
 if(aceitouSalvar === null || aceitouSalvar === true){
 

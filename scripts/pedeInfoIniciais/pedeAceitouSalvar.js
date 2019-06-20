@@ -1,4 +1,4 @@
-import aceitouSalvar from '../storage/aceitouSalvar.js'
+import aceitouSalvar from '/scripts/storage/aceitouSalvar.js'
 
 if(aceitouSalvar === null){
      aceitouSalvar = confirm('Você aceita que a gente salve suas informações?');

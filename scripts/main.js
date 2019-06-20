@@ -1,1 +1,1 @@
-import './pedeInfoIniciais/index.js'
+import '/scripts/pedeInfoIniciais/index.js'
