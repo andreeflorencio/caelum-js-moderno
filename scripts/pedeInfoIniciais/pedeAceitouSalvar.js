@@ -1,4 +1,4 @@
-import aceitouSalvar from '/scripts/storage/aceitouSalvar.js'
+import aceitouSalvar, { setAceitouSalvar } from '/scripts/storage/aceitouSalvar.js'
 
 if(aceitouSalvar === null){
     const aceitouSalvar = confirm('Você aceita que a gente salve suas informações?');
@@ -7,6 +7,6 @@ if(aceitouSalvar === null){
         alert('Você pode mudar isso na página de configurações');
     };
 
-    localStorage.setItem('aceitouSalvar', aceitouSalvar);
+    setAceitouSalvar(aceitouSalvar);
     
 }

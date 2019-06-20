@@ -1,5 +1,5 @@
 import aceitouSalvar from '/scripts/storage/aceitouSalvar.js';
-import paginaInicial from '/scripts/storage/paginaInicial.js';
+import paginaInicial, { setPaginaInicial } from '/scripts/storage/paginaInicial.js';
 
 if(aceitouSalvar === null || aceitouSalvar === true){
     
@@ -19,6 +19,6 @@ if(aceitouSalvar === null || aceitouSalvar === true){
 
         $janelaPrincipal.src = paginaInicialDefault;
         $inputEndereco.value = paginaInicialDefault;
-        localStorage.setItem('paginaInicial', paginaInicialDefault);
+        setPaginaInicial(paginaInicialDefault);
     }
 }
