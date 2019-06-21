@@ -1,6 +1,6 @@
-import { aceitouSalvar, setAceitouSalvar } from '/scripts/storage/aceitouSalvar.js'
+import * as storage from '/scripts/storage/aceitouSalvar.js'
 
-if(aceitouSalvar === null){
+if(storage.aceitouSalvar === null){
     
     const aceitouSalvar = confirm('Você aceita que a gente salve suas informações?');
     
@@ -8,6 +8,6 @@ if(aceitouSalvar === null){
         alert('Você pode mudar isso na página de configurações');
     };
 
-    setAceitouSalvar(aceitouSalvar);
+    storage.setAceitouSalvar(storage.aceitouSalvar);
     
 }
