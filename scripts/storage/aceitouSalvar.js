@@ -1,5 +1,6 @@
-export default JSON.parse(localStorage.getItem('aceitouSalvar'));
+export let aceitouSalvar = JSON.parse(localStorage.getItem('aceitouSalvar'));
 
-export function setAceitouSalvar(aceitouSalvar) {
-    localStorage.setItem("aceitouSalvar", aceitouSalvar);
+export function setAceitouSalvar(valor) {
+    aceitouSalvar = valor;
+    localStorage.setItem("aceitouSalvar", valor);
 }
