@@ -8,7 +8,12 @@ $botaoSalvar.onclick = salvar;
 
 function salvar() {
 
-    storageAceitouSalvar.setAceitouSalvar($inputPermitiuSalvar.checked);
+    const funcaoEscolhida = $inputPermitiuSalvar.checked === true
+    ? storageAceitouSalvar.setAceitou // true
+    : storageAceitouSalvar.setNaoAceitou; //false
+
+    funcaoEscolhida();
+
     storagePaginaInicial.setPaginaInicial($inputPaginaInicial.value);
 
 };

@@ -8,6 +8,10 @@ if(storage.aceitouSalvar === null){
         alert('Você pode mudar isso na página de configurações');
     };
 
-    storage.setAceitouSalvar(storage.aceitouSalvar);
+    const funcaoSalvar = aceitouSalvar === true
+    ? storage.setAceitou // true
+    : storage.setNaoAceitou; //false
+
+    funcaoSalvar();
     
 }
