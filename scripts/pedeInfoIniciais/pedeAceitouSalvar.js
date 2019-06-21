@@ -12,6 +12,5 @@ if(storage.aceitouSalvar === null){
     ? storage.setAceitou // true
     : storage.setNaoAceitou; //false
 
-    funcaoSalvar();
-    
-}
+    funcaoSalvar();  
+};

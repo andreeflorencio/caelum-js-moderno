@@ -1,5 +1,6 @@
 import { aceitouSalvar } from '/scripts/storage/aceitouSalvar.js';
 import { paginaInicial, setPaginaInicial } from '/scripts/storage/paginaInicial.js';
+import { formataEndereco } from '/scripts/endereco/formataEndereco.js'
 
 if(aceitouSalvar === null || aceitouSalvar === true){
     
@@ -10,15 +11,12 @@ if(aceitouSalvar === null || aceitouSalvar === true){
     } 
 
     if(paginaInicialDefault){
-        if (
-            paginaInicialDefault.substring(0,7) !== 'http://' && 
-            paginaInicialDefault.substring(0,8) !== 'https://'
-        ) {
-            paginaInicialDefault = `http://${paginaInicialDefault}`;
-        }
 
-        $janelaPrincipal.src = paginaInicialDefault;
-        $inputEndereco.value = paginaInicialDefault;
-        setPaginaInicial(paginaInicialDefault);
+        const enderecoCompleto = formataEndereco(paginaInicialDefault);
+
+
+        $janelaPrincipal.src = enderecoCompleto;
+        $inputEndereco.value = enderecoCompleto;
+        setPaginaInicial(enderecoCompleto);
     }
 }
