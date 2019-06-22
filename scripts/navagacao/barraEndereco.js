@@ -1,5 +1,5 @@
 $janelaPrincipal.onload = exibeEnderecoNaBarra;
 
 function exibeEnderecoNaBarra(){
-    $janelaPrincipal.src = $janelaPrincipal.contentWindow.location.href;
+    $inputEndereco.value = $janelaPrincipal.contentWindow.location.href;
 };
