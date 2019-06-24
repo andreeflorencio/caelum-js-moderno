@@ -1,11 +1,10 @@
-import * as storagePaginaInicial from '/scripts/storage/paginaInicial'
+import * as storagePaginaInicial from '/scripts/storage/paginaInicial.js'
 import { formataEndereco } from '/scripts/endereco/formataEndereco.js'
+//Salvando o histórico
+import * as storagePaginaAtual from '/scripts/storage/paginaAtual.js'
 
-
-//Criar modulo
-// Pagar pagina atual do localstorage
-const paginaAtual = localStorage.getItem('paginaAtual')
-
+const paginaAtual = storagePaginaAtual.paginaAtual
+    
 if(paginaAtual !== null){
     const enderecoCompleto = formataEndereco(paginaAtual);
 
