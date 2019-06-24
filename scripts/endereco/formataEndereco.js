@@ -3,7 +3,7 @@ export function formataEndereco(enderecoParaFormatar) {
         enderecoParaFormatar.substring(0,7) !== 'http://' && 
         enderecoParaFormatar.substring(0,8) !== 'https://'
     ) {
-        enderecoParaFormatar = `http://${paginaInicialDefault}`;
+        enderecoParaFormatar = `http://${enderecoParaFormatar}`;
     }
 
     return enderecoParaFormatar

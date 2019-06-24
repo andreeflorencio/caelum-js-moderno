@@ -5,7 +5,7 @@ import { formataEndereco } from '/scripts/endereco/formataEndereco.js'
 $inputPaginaInicial.value = storagePaginaInicial.paginaInicial;
 $inputPermitiuSalvar.checked = storageAceitouSalvar.aceitouSalvar;
 
-$botaoSalvar.onclick = salvar;
+$botaoSalvar.addEventListener('click',salvar)
 
 function salvar() {
 
