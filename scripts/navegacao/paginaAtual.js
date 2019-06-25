@@ -18,3 +18,12 @@ $janelaPrincipal.addEventListener('load', function atualizaPaginaAtual(){
     storagePaginaAtual.setPaginaAtual(endereco);
 });
 
+$botaoVoltar.addEventListener('click', function(){
+    alert('voltando')
+});
+
+$botaoAvancar.addEventListener('click', function(){
+    alert('avançando')
+});
+
+
