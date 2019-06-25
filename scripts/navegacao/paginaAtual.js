@@ -13,10 +13,8 @@ const enderecoCompleto = formataEndereco(paginaParaCarregar);
 
 carregar(enderecoCompleto);
 
-$janelaPrincipal.addEventListener('load', atualizaPaginaAtual);
-
-function atualizaPaginaAtual(){
+$janelaPrincipal.addEventListener('load', function atualizaPaginaAtual(){
     let endereco =  $janelaPrincipal.contentWindow.location.href;
     storagePaginaAtual.setPaginaAtual(endereco);
-};
+});
 
