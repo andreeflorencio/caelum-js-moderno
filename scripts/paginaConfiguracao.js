@@ -23,10 +23,12 @@ function salvar() {
 };
 
 $botaoLimpaTudo.addEventListener('click', function(){
-    
+    const chavesPermanente = ['aceitouTermos', 'aceitouSalvar']
     const listaChavesLocalStorage = Object.keys(localStorage);
+    
     listaChavesLocalStorage.forEach((chave)=>{
-        localStorage.removeItem(chave);
+        const isChavePermanete = chavesPermanente.includes(chave)
+        if (!isChavePermanete) localStorage.removeItem(chave);
     });
 
     const listaChavesSessionStorage = Object.keys(sessionStorage);
