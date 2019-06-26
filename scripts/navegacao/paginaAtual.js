@@ -26,5 +26,5 @@ $botaoVoltar.addEventListener('click', function () {
 
 $botaoAvancar.addEventListener('click', function () {
     const enderecoAvanca = historico.avanca();
-    if(enderecoVolta !== undefined) carregar(enderecoAvanca);
+    if(enderecoAvanca !== undefined) carregar(enderecoAvanca);
 });
