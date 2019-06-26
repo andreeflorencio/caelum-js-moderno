@@ -1,15 +1,16 @@
-//Separar no arquivo de storage
+import * as storageHistorico from '/scripts/storage/historico.js'
 
-const listaSites = JSON.parse(sessionStorage.getItem('historico')) || []
+const listaSites = storageHistorico.listaSites;
 
-let posicao = JSON.parse(sessionStorage.getItem('posicaoHistorico')) || -1;
+let posicao = storageHistorico.posicao
 
 export function adiciona(endereco) {
     if (endereco !== listaSites[posicao]) {
         listaSites.splice(posicao + 1); //Remove elementos futuros da lista
         listaSites.push(endereco); //Inclui elementos na lista
-        sessionStorage.setItem('historico', JSON.stringify(listaSites));
-        sessionStorage.setItem('posicaoHistorico', posicao);
+        
+        storageHistorico.setHistorico(listaSites);
+        storageHistorico.setPosicao(posicao);
 
         posicao++;
     };
