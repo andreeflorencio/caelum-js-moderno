@@ -16,9 +16,21 @@ function salvar() {
     funcaoEscolhida();
 
     const enderecoCompleto = formataEndereco($inputPaginaInicial.value)
-
     storagePaginaInicial.setPaginaInicial(enderecoCompleto);
     
     $inputPaginaInicial.value = enderecoCompleto;
 
 };
+
+$botaoLimpaTudo.addEventListener('click', function(){
+    
+    const listaChavesLocalStorage = Object.keys(localStorage);
+    listaChavesLocalStorage.forEach((chave)=>{
+        localStorage.removeItem(chave);
+    });
+
+    const listaChavesSessionStorage = Object.keys(sessionStorage);
+    listaChavesSessionStorage.forEach((chave)=>{
+        sessionStorage.removeItem(chave);
+    });
+});

@@ -1,7 +1,8 @@
+//Separar no arquivo de storage
+
 const listaSites = JSON.parse(sessionStorage.getItem('historico')) || []
 
 let posicao = JSON.parse(sessionStorage.getItem('posicaoHistorico')) || -1;
-
 
 export function adiciona(endereco) {
     if (endereco !== listaSites[posicao]) {
