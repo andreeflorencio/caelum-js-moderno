@@ -10,29 +10,31 @@ $botaoSalvar.addEventListener('click', salvar)
 function salvar() {
 
     const funcaoEscolhida = $inputPermitiuSalvar.checked === true
-    ? storageAceitouSalvar.setAceitou // true
-    : storageAceitouSalvar.setNaoAceitou; //false
+        ? storageAceitouSalvar.setAceitou // true
+        : storageAceitouSalvar.setNaoAceitou; //false
 
     funcaoEscolhida();
 
     const enderecoCompleto = formataEndereco($inputPaginaInicial.value)
     storagePaginaInicial.setPaginaInicial(enderecoCompleto);
-    
+
     $inputPaginaInicial.value = enderecoCompleto;
 
 };
 
-$botaoLimpaTudo.addEventListener('click', function(){
+$botaoLimpaTudo.addEventListener('click', function () {
     const chavesPermanente = ['aceitouTermos', 'aceitouSalvar']
     const listaChavesLocalStorage = Object.keys(localStorage);
-    
-    listaChavesLocalStorage.forEach((chave)=>{
+
+    listaChavesLocalStorage.forEach((chave) => {
         const isChavePermanete = chavesPermanente.includes(chave)
         if (!isChavePermanete) localStorage.removeItem(chave);
     });
 
     const listaChavesSessionStorage = Object.keys(sessionStorage);
-    listaChavesSessionStorage.forEach((chave)=>{
+    listaChavesSessionStorage.forEach((chave) => {
         sessionStorage.removeItem(chave);
     });
+
+    window.location.reload();
 });
