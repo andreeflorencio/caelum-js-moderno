@@ -1,37 +1,23 @@
 import { carregar } from '/scripts/navegacao/carregar.js';
 import { formataEndereco } from '/scripts/endereco/formataEndereco.js';
+import { criaEndereco } from '/scripts/endereco/criaEndereco.js'
+
+let endereco;
+
+$janelaPrincipal.addEventListener('load', function(){
+    endereco = criaEndereco($janelaPrincipal.contentWindow.location.href);
+});
 
 $inputEndereco.addEventListener('focus', exibeEnderecoCompleto);
-
 $inputEndereco.addEventListener('blur', exibeEnderecoResumido);
-
 $janelaPrincipal.addEventListener('load', exibeEnderecoResumido);
 
-
 function exibeEnderecoCompleto(){
-    const url = new URL($janelaPrincipal.contentWindow.location.href)
-   
-    let enderecoCompleto;
-    if(url.hostname === 'localhost'){
-        enderecoCompleto = url.pathname.replace("/","");
-    } else {
-        enderecoCompleto = url.href
-    };
-
-    $inputEndereco.value = enderecoCompleto;
+    $inputEndereco.value = endereco.urlCompleta;
 };
 
 function exibeEnderecoResumido() {
-    const url = new URL($janelaPrincipal.contentWindow.location.href)
-    
-    let enderecoResumido;    
-    if(url.hostname === 'localhost'){
-        enderecoResumido = url.pathname.replace("/","");
-    } else {
-        enderecoResumido = url.hostname
-    };
-
-    $inputEndereco.value = enderecoResumido;
+    $inputEndereco.value = endereco.urlResumida;
 };
 
 $inputEndereco.addEventListener('keyup', function(evento) {
