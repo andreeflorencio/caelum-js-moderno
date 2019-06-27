@@ -1,4 +1,4 @@
-export function carregar(valor) {
-    $janelaPrincipal.src = valor;
-    $inputEndereco.value = valor;
+export function carregar(enderecoCompleto) {
+    $janelaPrincipal.src = enderecoCompleto;
+    $inputEndereco.value = enderecoCompleto;
 };

@@ -1,23 +1,30 @@
 export function criaEndereco(endereco){
     
-    const url = new URL(endereco)
-
-    let enderecoCompleto;
-    if(url.hostname === 'localhost'){
-        enderecoCompleto = url.pathname.replace("/","");
-    } else {
-        enderecoCompleto = url.href
-    };
-
     let enderecoResumido;
-    if(url.hostname === 'localhost'){
-        enderecoResumido = url.pathname.replace("/","");
-    } else {
-        enderecoResumido = url.hostname
-    };
+    let enderecoCompleto;
 
-    return {
-        urlCompleta: enderecoCompleto,
-        urlResumida: enderecoResumido
-    };
+    if (!endereco ===  null || enderecoParaFormatar === "blank" || enderecoParaFormatar === "blank") {
+        
+        enderecoResumido = 'blank';
+        enderecoCompleto = 'blank';
+
+    } else {
+
+        const url = new URL(endereco)
+
+        if(url.hostname === 'localhost'){
+            const paginaLocal = url.pathname.replace("/","");
+            enderecoCompleto =  paginaLocal;
+            enderecoResumido = paginaLocal;
+        } else {
+            enderecoCompleto = url.href
+            enderecoResumido = url.hostname
+        };
+
+        return {
+            urlCompleta: enderecoCompleto,
+            urlResumida: enderecoResumido
+        };
+
+    }
 };

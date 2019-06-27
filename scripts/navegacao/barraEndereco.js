@@ -5,7 +5,7 @@ import { criaEndereco } from '/scripts/endereco/criaEndereco.js'
 let endereco;
 
 $janelaPrincipal.addEventListener('load', function(){
-    endereco = criaEndereco($janelaPrincipal.contentWindow.location.href);
+    endereco = new criaEndereco($janelaPrincipal.contentWindow.location.href);
 });
 
 $inputEndereco.addEventListener('focus', exibeEnderecoCompleto);
@@ -24,7 +24,8 @@ $inputEndereco.addEventListener('keyup', function(evento) {
     const apertouEnter = evento.key === 'Enter';
     
     if (apertouEnter) {
-        const enderecoCompleto = formataEndereco($inputEndereco.value)
+        const enderecoCompleto = formataEndereco($inputEndereco.value);
+        endereco = criaEndereco(enderecoCompleto);
         carregar(enderecoCompleto);
     };
 });
