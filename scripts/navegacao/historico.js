@@ -8,11 +8,11 @@ export function adiciona(endereco) {
     if (endereco !== listaSites[posicao]) {
         listaSites.splice(posicao + 1); //Remove elementos futuros da lista
         listaSites.push(endereco); //Inclui elementos na lista
-        
+       
+        posicao++;
+
         storageHistorico.setHistorico(listaSites);
         storageHistorico.setPosicao(posicao);
-
-        posicao++;
     };
 };
 
@@ -21,6 +21,7 @@ export function volta() {
 
     if (listaSites.length !== 1 && !isPrimeiraPosicao) {
         posicao--;
+        storageHistorico.setPosicao(posicao);
         return listaSites[posicao];
     };
 };
@@ -30,6 +31,7 @@ export function avanca() {
 
     if (listaSites.length !== 1 && !ehUltimaPosicao) {
         posicao++;
+        storageHistorico.setPosicao(posicao);
         return listaSites[posicao];
     };
 };

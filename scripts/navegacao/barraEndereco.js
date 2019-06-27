@@ -9,12 +9,28 @@ $janelaPrincipal.addEventListener('load', exibeEnderecoResumido);
 
 
 function exibeEnderecoCompleto(){
-    $inputEndereco.value = $janelaPrincipal.contentWindow.location.href;
+    const url = new URL($janelaPrincipal.contentWindow.location.href)
+   
+    let enderecoCompleto;
+    if(url.hostname === 'localhost'){
+        enderecoCompleto = url.pathname.replace("/","");
+    } else {
+        enderecoCompleto = url.href
+    };
+
+    $inputEndereco.value = enderecoCompleto;
 };
 
 function exibeEnderecoResumido() {
     const url = new URL($janelaPrincipal.contentWindow.location.href)
-    const enderecoResumido = url.hostname
+    
+    let enderecoResumido;    
+    if(url.hostname === 'localhost'){
+        enderecoResumido = url.pathname.replace("/","");
+    } else {
+        enderecoResumido = url.hostname
+    };
+
     $inputEndereco.value = enderecoResumido;
 };
 
