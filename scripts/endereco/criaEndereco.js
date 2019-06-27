@@ -3,7 +3,7 @@ export function criaEndereco(endereco){
     let enderecoResumido;
     let enderecoCompleto;
 
-    if (!endereco ===  null || enderecoParaFormatar === "blank" || enderecoParaFormatar === "blank") {
+    if (!endereco ===  null || endereco === "blank") {
         
         enderecoResumido = 'blank';
         enderecoCompleto = 'blank';
@@ -25,6 +25,5 @@ export function criaEndereco(endereco){
             urlCompleta: enderecoCompleto,
             urlResumida: enderecoResumido
         };
-
     }
 };
