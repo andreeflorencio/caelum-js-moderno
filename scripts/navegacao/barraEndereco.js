@@ -24,8 +24,7 @@ $inputEndereco.addEventListener('keyup', function(evento) {
     const apertouEnter = evento.key === 'Enter';
     
     if (apertouEnter) {
-        const enderecoCompleto = formataEndereco($inputEndereco.value);
-        endereco = criaEndereco(enderecoCompleto);
-        carregar(enderecoCompleto);
+        endereco = criaEndereco($inputEndereco.value);
+        carregar(endereco);
     };
 });
