@@ -1,3 +1,5 @@
+import { CakeEnderecoInvalidoError } from '/scripts/erros/CakeEnderecoInvalidoError.js'
+
 export function criaEndereco(endereco){
 
     //Evita que o objeto seja instanciado sem o new
@@ -19,9 +21,21 @@ export function criaEndereco(endereco){
         enderecoCompleto = 'blank';
 
     } else {
+        //Verifica se a url informada possui http
+        if (endereco.substring(0,7) !== 'http://' && endereco.substring(0,8) !== 'https://') {
+            endereco = `http://${endereco}`;
+        }
 
-        //cria objeto url do endereço 
-        const url = new URL(endereco)
+        let url;
+
+        try {
+            //cria objeto url do endereço 
+            url = new URL(endereco)
+        } catch (error) {
+            //Instacia o objeto de erro
+            const erroCustomizado = new CakeEnderecoInvalidoError(endereco);
+            throw erroCustomizado
+        };        
 
         if(url.hostname === 'localhost'){
             const paginaLocal = url.pathname.replace("/","");
