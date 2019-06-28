@@ -1,5 +1,4 @@
 import { carregar } from '/scripts/navegacao/carregar.js';
-import { formataEndereco } from '/scripts/endereco/formataEndereco.js';
 import { criaEndereco } from '/scripts/endereco/criaEndereco.js'
 
 let endereco;
