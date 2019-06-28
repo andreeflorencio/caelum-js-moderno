@@ -1,4 +1,4 @@
-import { criaEndereco } from "/script/endereco/criaEndereco.js";
+import { criaEndereco } from "/scripts/endereco/criaEndereco.js";
 
 export function carregar(valor) {
 
@@ -6,7 +6,7 @@ export function carregar(valor) {
 
     if (typeof (valor) === 'string') {
         
-        endereco = criaEndereco(valor)
+        endereco = new criaEndereco(valor)
 
     } else if (valor instanceof criaEndereco) {
         
@@ -15,7 +15,7 @@ export function carregar(valor) {
     } else {
 
         throw new Error(`
-            Não foi possivel carregar o seguinte endereço
+            Você passou um endereço que não é do tipo string e nem do tipo endereço
                 Valor: ${JSON.stringify(valor)}
                 Tipo: ${typeof(valor)}
         `);

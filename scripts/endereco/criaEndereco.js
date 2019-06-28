@@ -20,10 +20,10 @@ export function criaEndereco(endereco){
             enderecoCompleto = url.href
             enderecoResumido = url.hostname
         };
-
-        return {
-            urlCompleta: enderecoCompleto,
-            urlResumida: enderecoResumido
-        };
     }
+
+    this.urlCompleta = enderecoCompleto;
+    this.urlResumida = enderecoResumido;
+
+    return;
 };
