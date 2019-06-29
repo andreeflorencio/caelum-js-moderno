@@ -7,11 +7,11 @@ class Favorito extends criaEndereco {
         this.nome = nome || this.urlResumida
         this.descricao = this.urlResumida
 
-        //this.onclick = this.onclick.bind(this)
+        this.onclick = this.onclick.bind(this)
     }
 
     onclick(){
-        carregar(this.urlCompleta);
+        carregar(this);
     }
 }
 
