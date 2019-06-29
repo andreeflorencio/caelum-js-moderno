@@ -1,24 +1,50 @@
 import * as storagePaginaInicial from '/scripts/storage/paginaInicial.js'
 import * as storageAceitouSalvar from '/scripts/storage/aceitouSalvar.js'
-import { formataEndereco } from '/scripts/endereco/formataEndereco.js'
+import { criaEndereco } from '/scripts/endereco/criaEndereco.js';
+import { CakeEnderecoInvalidoError } from '/scripts/erros/CakeEnderecoInvalidoError';
 
+//Pega o valor do storage e coloca no valor dos campos no HTML
 $inputPaginaInicial.value = storagePaginaInicial.paginaInicial;
 $inputPermitiuSalvar.checked = storageAceitouSalvar.aceitouSalvar;
 
+//Quando clicar no botão salvar executa função salvar
 $botaoSalvar.addEventListener('click', salvar)
 
 function salvar() {
 
+    //IF ternário para determinar qual função será executada.
+    //Variavel recebe o valor de uma função do objeto storageAceitouSalvar
     const funcaoEscolhida = $inputPermitiuSalvar.checked === true
         ? storageAceitouSalvar.setAceitou // true
         : storageAceitouSalvar.setNaoAceitou; //false
 
     funcaoEscolhida();
 
-    const enderecoCompleto = formataEndereco($inputPaginaInicial.value)
-    storagePaginaInicial.setPaginaInicial(enderecoCompleto);
+    try {
 
-    $inputPaginaInicial.value = enderecoCompleto;
+        //Instancia de URL
+        const enderecoCompleto = new criaEndereco($inputPaginaInicial.value)
+        
+        //Salva no Storage a URL
+        storagePaginaInicial.setPaginaInicial(enderecoCompleto);
+
+        //Salva no formulário o endereço novo
+        $inputPaginaInicial.value = enderecoCompleto;
+        
+    } catch (error) {
+
+        if(error instanceof CakeEnderecoInvalidoError){
+            $inputPaginaInicial.value = ""
+            alert("URL Inválida: " + error)
+            console.warn(error.message);
+            
+        } else {
+            throw error
+        }
+        
+    }
+
+
 
 };
 

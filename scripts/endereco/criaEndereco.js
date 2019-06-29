@@ -56,3 +56,9 @@ export function criaEndereco(endereco){
     this.urlResumida = enderecoResumido;
 
 };
+
+criaEndereco.prototype = {
+    toString: function(){
+        return this.urlCompleta;
+    }
+};
